@@ -1,0 +1,26 @@
+Практическое задание по теме “Управление БД”
+
+Установите СУБД MySQL. Создайте в домашней директории файл .my.cnf, задав в нем логин и пароль, который указывался при установке.
+
+[mysql]
+user=root
+password=17193!
+
+Создайте базу данных example, разместите в ней таблицу users, состоящую из двух столбцов, числового id и строкового name.
+
+create database example;
+
+use example;
+
+create table users (
+ id smallint,
+ name CHAR(10)
+ );
+ 
+ Создайте дамп базы данных example из предыдущего задания, разверните содержимое дампа в новую базу данных sample.
+ 
+ mysqldump -u root -p example > example.sql
+ 
+ mysql> CREATE DATABASE sample;
+ 
+ mysql -u root -p sample < example.sql
